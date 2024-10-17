@@ -1,0 +1,151 @@
+@primary-color: #e74c3c;
+@secondary-color: #f39c12;
+@discount-bg: orange;
+@font-family: Arial, sans-serif;
+@box-shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.2);
+@border-radius: 5px;
+@padding: 15px;
+@transition-ease: ease-in-out;
+
+body {
+    font-family: @font-family;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.countdown {
+    font-size: 16px;
+    color: @primary-color;
+}
+
+.deals-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.deals {
+    display: flex;
+    transition: transform 1s ease;
+    width: calc(6 * 20%);
+}
+
+.deal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: @border-radius;
+    width: 20%;
+    margin-right: 2%;
+    padding: @padding;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: @box-shadow-hover;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .price {
+        font-size: 24px;
+        color: @primary-color;
+
+        &:hover {
+            color: darken(@primary-color, 10%);
+        }
+    }
+
+    .product-icons {
+        display: flex;
+        justify-content: space-around;
+        margin: 10px 0;
+        opacity: 0;
+        transition: opacity 0.3s @transition-ease;
+
+        i {
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+        }
+    }
+
+    &:hover .product-icons {
+        opacity: 1;
+    }
+}
+
+.discount {
+    background-color: @discount-bg;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.price {
+    font-size: 24px;
+    color: @primary-color;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 16px;
+}
+
+.rating {
+    margin: 10px 0;
+    color: @secondary-color;
+}
+
+.sold {
+    color: #888;
+    font-size: 14px;
+}
+
+.arrow {
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    user-select: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
